@@ -17,21 +17,15 @@
 
 <body>
     <div id="app">
-        <nav class="flex items-center bg-teal-500 p-6">
-            <div class="flex justify-start items-center flex-shrink-0 text-white mr-6">
+        <nav class="flex bg-teal-500 p-6">
+            <div class="flex justify-between items-center text-white mr-6">
                 <div class="flex justify-start">
                     <a class="font-semibold text-xl tracking-tight" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
                 <div class="flex justify-end">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="flex flex-wrap justify-around navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
