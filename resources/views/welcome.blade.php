@@ -16,12 +16,12 @@
         @if (Route::has('login'))
         <div class="flex justify-end items-center bg-teal-500 p-6">
             @auth
-            <a class="text-white px-4" href="{{ url('/home') }}">Inicio</a>
+            <a class="text-white px-4 hover:text-blue-800" href="{{ url('/home') }}">Inicio</a>
             @else
-            <a class="text-white px-4" href="{{ route('login') }}">Acceder</a>
+            <a class="text-white px-4 hover:text-blue-800" href="{{ route('login') }}">Acceder</a>
 
             @if (Route::has('register'))
-            <a class="text-white px-4" href="{{ route('register') }}">Registro</a>
+            <a class="text-white px-4 hover:text-blue-800" href="{{ route('register') }}">Registro</a>
             @endif
             @endauth
         </div>

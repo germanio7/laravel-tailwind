@@ -17,43 +17,29 @@
 
 <body>
     <div id="app">
-        <nav class="flex bg-teal-500 p-6">
+        <nav class="bg-teal-500 p-6">
             <div class="flex justify-between items-center text-white mr-6">
-                <div class="flex justify-start">
-                    <a class="font-semibold text-xl tracking-tight" href="{{ url('/') }}">
+                <div class="flex">
+                    <a class="font-semibold text-xl tracking-tight hover:text-blue-800" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
-                <div class="flex justify-end">
-                    <ul class="flex flex-wrap justify-around navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <div class="flex">
+                    @guest
+                    <a class="px-4 hover:text-blue-800" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @if (Route::has('register'))
+                    <a class="px-4 hover:text-blue-800" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    @endif
+                    @else
+                    <a class="px-4 hover:text-blue-800" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                        {{ __('Logout') }}
+                    </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
+                    <form class="hover:text-blue-800" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    @endguest
                     </ul>
                 </div>
             </div>
